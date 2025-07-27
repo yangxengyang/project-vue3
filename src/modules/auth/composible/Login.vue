@@ -48,7 +48,6 @@
 <script lang="ts" setup>
 import { reactive } from 'vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
-import axios from 'axios';
 import { useRouter } from 'vue-router';
 import {useAuth} from './auth.ts';
 

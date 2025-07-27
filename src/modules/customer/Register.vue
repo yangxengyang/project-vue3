@@ -17,6 +17,7 @@ const formState = reactive<FormState>({
   password: '',
   username: '',
 });
+const error = ref<string | null>(null);
 
 const isLoading = ref(false);
 

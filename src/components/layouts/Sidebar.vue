@@ -36,7 +36,6 @@ import {
   UploadOutlined
 } from '@ant-design/icons-vue';
 import { useRouter } from 'vue-router';
-import image1 from '@/assets/image1.png';
 
 const selectedKeys = ref<string[]>([]);
 
