@@ -1,0 +1,69 @@
+<template>
+    <div class="logo">
+        <img src="/public/image.png"/>
+    </div>
+      <a-menu v-model:selectedKeys="selectedKeys" class="sidebar-menu" mode="inline">
+        <a-menu-item key="1" @click="handleMenuClick('customer')">
+          <user-outlined />
+          <span>Customer</span>
+        </a-menu-item>
+        <a-menu-item key="2" @click="handleMenuClick('course.category')">
+          <video-camera-outlined />
+          <span>Course Catgory</span>
+        </a-menu-item>
+        <a-menu-item key="3"@click="handleMenuClick('course')">
+          <upload-outlined />
+          <span>Course</span>
+        </a-menu-item>
+        <a-sub-menu key="sub2">
+          <template #title>
+            <span>
+              <team-outlined />
+              <span>Team</span>
+            </span>
+          </template>
+          <a-menu-item key="6">Team 1</a-menu-item>
+          <a-menu-item key="8">Team 2</a-menu-item>
+        </a-sub-menu>
+      </a-menu>
+</template>
+<script lang="ts" setup>
+import { ref } from 'vue';
+import {
+  UserOutlined,
+  TeamOutlined,
+  VideoCameraOutlined,
+  UploadOutlined
+} from '@ant-design/icons-vue';
+import { useRouter } from 'vue-router';
+import image1 from '@/assets/image1.png';
+
+const selectedKeys = ref<string[]>([]);
+
+const router = useRouter();
+
+const handleMenuClick = (key: string) => {
+  router.push({ name: key });
+};
+
+</script>
+
+<style lang="scss" scoped>
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8125rem 0.5rem 0.8125rem 1rem;
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.8rem;
+    margin-left: 0.25rem;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+}
+</style>
